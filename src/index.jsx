@@ -4,8 +4,6 @@ import { createRoot } from "react-dom/client";
 
 import App from "./App";
 
-axios.defaults.baseURL = "https://api.weather.gov";
-
 createRoot(document.getElementById("root")).render(
     <StrictMode>
         <App/>
