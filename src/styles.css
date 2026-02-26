@@ -1,0 +1,46 @@
+:root {
+    --alpha: 0.5;
+    --main-color: rgba(20, 20, 20, var(--alpha));
+    --hover-color: rgba(50, 50, 50, var(--alpha));
+}
+
+body {
+    display: flex;
+    color: white;
+    margin: 0;
+    overflow: hidden;
+}
+
+#map {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+#info {
+    position: absolute;
+    background-color: var(--main-color);
+    backdrop-filter: blur(5px);
+
+    left: 50%;
+    transform: translate(-50%);
+
+    margin-top: 20px;
+    padding: 10px 100px;
+}
+
+/* messy way of customizing leaflet ui */
+
+.leaflet-control-zoom > a {
+    background-color: var(--main-color);
+}
+
+.leaflet-control-zoom > a:hover {
+    background-color: var(--hover-color);
+}
+
+a > span {
+    color: white;
+    font-weight: normal;
+}
