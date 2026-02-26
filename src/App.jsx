@@ -52,7 +52,7 @@ export default function App() {
 
     return <>
         <MapContainer id="map" ref={mapRef} center={mapCenter} zoom={12} attributionControl={false}>
-            <TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"/>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
 
             <Marker position={clickCenter}/>
             <Polygon positions={polygon}/>
