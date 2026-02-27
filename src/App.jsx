@@ -103,7 +103,7 @@ export default function App() {
         >
             <TileLayer
                 className="map-tiles"
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                url={`https://api.maptiler.com/maps/hybrid-v4/{z}/{x}/{y}.jpg?key=${import.meta.env.VITE_MAPTILER_KEY}`}
             />
 
             {clickCenter && <Marker position={clickCenter}/>}

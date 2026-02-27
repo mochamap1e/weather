@@ -19,9 +19,11 @@ body {
     z-index: -1;
 }
 
+/*
 .map-tiles {
     filter: invert(1) hue-rotate(180deg);
 }
+*/
 
 .info {
     position: absolute;
