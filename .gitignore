@@ -9,6 +9,7 @@ node_modules
 dist
 dist-ssr
 public
+certs
 *.local
 .vscode/*
 !.vscode/extensions.json

@@ -52,6 +52,7 @@ export default function App() {
                 ?latitude=${lat}
                 &longitude=${wrapLongitude(lng)}
                 &timezone=auto
+                &temperature_unit=fahrenheit
                 &current=is_day,temperature_2m,relative_humidity_2m
             `.replaceAll(" ", ""))).data;
 
@@ -112,10 +113,10 @@ export default function App() {
         <div className="info">
             <h1>{fetchingText}</h1>
 
-            <h2>{isDay === 1 ? "Day!" : "Night :c"}</h2>
+            <h2>{isDay === 1 ? "Day" : "Night"}</h2>
             <h2>{time}</h2>
             <h2>{temp}</h2>
-            <h2>{humidity}</h2>
+            <h2>{humidity} humidity</h2>
         </div>
     </>
 }

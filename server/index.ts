@@ -1,10 +1,17 @@
-import { Elysia } from "elysia";
-import { staticPlugin } from "@elysiajs/static";
+import fs from "fs";
+import path from "path";
+import https from "https";
+import express from "express";
 
+const certsPath = path.join(__dirname, "..", "certs");
+const htmlPath = path.join(__dirname, "..", "public");
+
+const app = express();
 const port = 3000;
 
-const server = new Elysia()
-    .use(staticPlugin({ prefix: "/", alwaysStatic: true }))
-    .listen(port);
+app.use(express.static(htmlPath));
 
-console.log(`Server running on port ${port}`);
+https.createServer({
+    key: fs.readFileSync(path.join(certsPath, "key.pem")),
+    cert: fs.readFileSync(path.join(certsPath, "cert.pem"))
+}, app).listen(port, () => console.log("Server running on port", port));
